@@ -1,23 +1,68 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Hangman, Anime Edition!</title>
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Anime_eye.svg/2000px-Anime_eye.svg.png">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Hangman, Anime Edition!</h1>
-    <p>Press any key to get started</p>
-    <p id="win">Wins</p>
-    <p>Current Word  </p>
-    <p id="word">----------</p>
-    <p>Number of Guesses Remaining</p>
-    <p id="remaining"></p>
-    <p>Letters already Guessed</p>
-    <p id="guessed"></p>
+    <!-- <header> -->
+      
+    <!-- </header> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h1>Hangman, Anime Edition!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="game">
+                    <p>Press any key to get started</p>
+                    <p id="win">Wins</p>
+                    <p>Current Word </p>
+                    <p id="word">----------</p>
+                    <p>Number of Guesses Remaining</p>
+                    <p id="remaining"></p>
+                    <p>Letters already Guessed</p>
+                    <p id="guessed"></p>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+                <!-- <div id="anime">Anime</div> -->
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/anime.jpg" alt="ANIME!">
+                    <div class="card-body">
+                        <h5 class="card-title">Say it with me: Anime!</h5>
+                        <p class="card-text">Who needs drugs when you got anime?</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <footer>themes</footer> -->
+
+    <audio id="themesong">
+        <!-- <source id="themesong" type="audio/mpeg"> -->
+        <!-- <source id="theme2"> -->
+        Your browser can't play Anime music. :(
+    </audio>
+
     <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <!-- <script type="text/javascript" src="assets/javascrit/themes.js">s</script> -->
 </body>
 
 </html>

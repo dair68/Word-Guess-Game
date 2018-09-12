@@ -4,6 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
+var index = 0;
 var anime = [
     "ATTACK ON TITAN",
     "SAILOR MOON",
@@ -17,20 +18,44 @@ var anime = [
     "ONE PUNCH MAN",
     "YUGIOH",
     "DEATH NOTE",
-    "GIN TAMA",
+    "GINTAMA",
     "ANGEL BEATS",
     "KILL LA KILL",
     "YURI ON ICE",
     "TOKYO GHOUL",
-    "COWBOY BEBOP"
+    "COWBOY BEBOP",
+    "GUNDAM",
+    "NEON GENESIS EVANGELION",
+    "INAZUMA ELEVEN",
+    "HUNTER X HUNTER",
+    "BOBOBO-BO BO-BOBO",
+    "BLEACH",
+    "JOJO'S BIZARRE ADVENTURE",
+    "CASED CLOSED",
+    "HETALIA",
+    "MY HERO ACADEMIA",
+    "FAIRY TAIL",
+    "SWORD ART ONLINE"
 ];
 
+
+
+//makes page display changes
+function update() {
+    $("#win").text("Wins: " + wins);
+    $("#word").text(currentWord);
+    $("#remaining").text(guesses);
+    $("#guessed").text(guessedLetters.join(","));
+}
+
+//sets up page for another game of hangman
 function reset() {
     //randomly selecting anime as the hangman word. ensures new word differs from previous.
-    previousWord = word;
-    while (word === previousWord) {
-        word = anime[Math.floor(Math.random()*anime.length)];
-    }
+    // previousWord = word;
+    // while (word === previousWord) {
+    //     word = anime[Math.floor(Math.random()*anime.length)];
+    // }
+    word = anime[index];
     console.log(word);
     currentWord = "-".repeat(word.length);
     //replacing appropriate dashes with spaces
@@ -41,18 +66,14 @@ function reset() {
     }
     guesses = 12;
     guessedLetters = [];
+    
 }
 
-function update() {
-    $("#win").text("Wins: " + wins);
-    $("#word").text(currentWord);
-    $("#remaining").text(guesses);
-    $("#guessed").text(guessedLetters.join(","));
-}
 
+
+//allows user to guess letter by hitting letter keys
 $(document).on("keyup", function(event) {
     key = event.key.toUpperCase();
-    // console.log(key);
     //making sure key is letter, and not already guessed
     if ("A" <= key && key <= "Z" && !guessedLetters.includes(key)) {
         //guessed correct letter!
@@ -66,7 +87,10 @@ $(document).on("keyup", function(event) {
             //finished guessing the word
             if (word === currentWord) {
                 wins++;
+                changeStyle(word);
+                index++;
                 reset();
+                
             }
             //out of guesses
             else if (guesses === 0) {
@@ -80,12 +104,44 @@ $(document).on("keyup", function(event) {
             guessedLetters.push(key);
             //out of guesses
             if (guesses === 0) {
-                reset();
+                index++;
+                reset(); 
             }
             update();
         }
     }
 });
 
+//when loading page for first time
 reset();
 update();
+
+
+function changeStyle(anime) {
+    console.log("switch!");
+    if (anime === "ATTACK ON TITAN") {
+        $("#themesong").attr("src","assets/songs/AttackOnTitan.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/attack.jpg","alt":"Attack on Titan"});
+        $(".card-title").text("Attack on Titan");
+        $(".card-text").text("A tale of humans who must deal with the gigantic, man-eating titans residing just outside their high city walls.");
+        $(".card").css("border-color","white");
+        $("body").css("background","darkred");
+        $("h1").css("color","white");
+        $("#game").css({"background":"#580201", "color":"white","border-color":"white"});
+        $(".card-body").css({"background":"black","color":"white"});
+    }
+    if (anime === "SAILOR MOON") {
+        $("#themesong").attr("src","assets/songs/SailorMoon.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/sailor.jpg","alt":"Sailor Moon"});
+        $(".card-title").text("Sailor Moon");
+        $(".card-text").text("A show about magical school girl who fightss baddies from outer space.");
+        $(".card").css("border-color","white");
+        $("body").css("background","darkred");
+        $("h1").css("color","white");
+        $("#game").css({"background":"#580201", "color":"white","border-color":"white"});
+        $(".card-body").css({"background":"black","color":"white"});
+    }
+}
+

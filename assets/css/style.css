@@ -1,0 +1,35 @@
+@font-face {
+    font-family: mangaTemple;
+    src: url(manga_temple/mangat.ttf);
+}
+
+body {
+    line-height: 1.5em;
+    margin: 2%;
+}
+
+header {
+    height: 3em;
+    margin: 2%;
+}
+
+h1 {
+    font-family: mangaTemple;
+    text-align: center;
+    /* font: bold; */
+    font-size: 3em;
+   color: 
+}
+
+#game {
+    font-family: mangaTemple;
+    border: thin solid black;
+    font-size: 1.5em;
+    padding: .5em;
+    /* float: right;
+    padding: 2%; */
+}
+
+#card {
+    border-color: black;
+}
