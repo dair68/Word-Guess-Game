@@ -159,17 +159,17 @@ function changeStyle(anime) {
     //naruto
     //dragon ball
 
-    // if (anime === "INUYASHA") {
-    //     $("#themesong").attr("src","assets/songs/Pokemon.mp3");
-    //     document.getElementById("themesong").play();
-    //     $(".card-img-top").attr({"src":"assets/images/pokemon.jpg","alt":"Ash and friends"});
-    //     $(".card-title").text("Pokemon");
-    //     $(".card-text").text("The unforgettable monster-catching show about a boy who wants to become a Pokemon master, but can't turn 11.");
-    //     $(".card").css("border-color","black");
-    //     $("body").css("background","lightyellow");
-    //     $("h1").css("color","black");
-    //     $("#game").css({"background":"white", "color":"black","border-color":"black"});
-    //     $(".card-body").css({"background":"white","color":"black"});
-    // }
+    if (anime === "INUYASHA") {
+        $("#themesong").attr("src","assets/songs/Inuyasha.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/inuyasha.jpg","alt":"Inuyasha and Kagome"});
+        $(".card-title").text("Inuyasha");
+        $(".card-text").text("Schoolgirl and half-demon team up to finds shards of an ancient jewel across feudal Japan.");
+        $(".card").css("border-color","black");
+        $("body").css("background","purple");
+        $("h1").css("color","white");
+        $("#game").css({"background":"white", "color":"black","border-color":"black"});
+        $(".card-body").css({"background":"white","color":"black"});
+    }
 }
 
