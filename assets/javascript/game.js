@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 5;
+var index = 3;
 var anime = [
     "ATTACK ON TITAN",
     "SAILOR MOON",
@@ -136,12 +136,12 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/sailor.jpg","alt":"Usagi Tsukino"});
         $(".card-title").text("Sailor Moon");
-        $(".card-text").text("A show about magical school girl who fights baddies from outer space.");
-        $(".card").css("border-color","white");
+        $(".card-text").text("A show about a magical school girl who fights baddies from outer space. She is the one named Sailor Moon!");
+        $(".card").css("border-color","honeydew");
         $("body").css("background","hotpink");
         $("h1").css("color","honeydew");
-        $("#game").css({"background":"#ffbbdd", "color":"honeydew","border-color":"white"});
-        $(".card-body").css({"background":"white","color":"black"});
+        $("#game").css({"background":"#ffbbdd", "color":"white","border-color":"white"});
+        $(".card-body").css({"background":"honeydew","color":"grey"});
     }
     if (anime === "POKEMON") {
         $("#themesong").attr("src","assets/songs/Pokemon.mp3");
@@ -150,15 +150,27 @@ function changeStyle(anime) {
         $(".card-title").text("Pokemon");
         $(".card-text").text("The unforgettable monster-catching show about a boy who wants to become a Pokemon master, but can't turn 11.");
         $(".card").css("border-color","black");
-        $("body").css("background","lightyellow");
+        $("body").css("background","turquoise");
         $("h1").css("color","black");
-        $("#game").css({"background":"white", "color":"black","border-color":"black"});
-        $(".card-body").css({"background":"white","color":"black"});
+        $("#game").css({"background":"#fce376", "color":"black","border-color":"black"});
+        $(".card-body").css({"background":"lightyellow","color":"black"});
     }
-    //one piece 
+    if (anime === "ONE PIECE") {
+        $("#themesong").attr("src","assets/songs/OnePiece.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/piece.jpg","alt":"Monkey D. Luffy and the crew"});
+        $(".card-title").text("One Piece");
+        $(".card-text").text("This insanely popular show chronicles the swashbuckling adventures of pirate Monkey D. Luffy and his friends in their search of the elusive 'One Piece' treasure.");
+        $(".card").css("border-color","black");
+        $("body").css("background","aqua");
+        $("h1").css("color","black");
+        $("#game").css({"background":"lightgreen", "color":"black","border-color":"black"});
+        $(".card-body").css({"background":"lightyellow","color":"black"});
+    }
+     
     //naruto
     if (anime === "DRAGON BALL") {
-        $("#themesong").attr("src","assets/songs/Inuyasha.mp3");
+        $("#themesong").attr("src","assets/songs/Dragonball.mp3");
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/dragonball.jpg","alt":"Goku and friends"});
         $(".card-title").text("Dragon Ball");
@@ -174,7 +186,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/inuyasha.jpg","alt":"Inuyasha and Kagome"});
         $(".card-title").text("Inuyasha");
-        $(".card-text").text("Schoolgirl and half-demon team up to finds shards of an ancient jewel across feudal Japan.");
+        $(".card-text").text("Schoolgirl and half-demon team up to find shards of an ancient jewel across feudal Japan.");
         $(".card").css("border-color","black");
         $("body").css("background","purple");
         $("h1").css("color","white");
