@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 10;
+var index = 11;
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var anime = [
     "ATTACK ON TITAN",
@@ -251,6 +251,18 @@ function changeStyle(anime) {
         $("h1").css("color","white");
         $("#game").css({"background":"grey", "color":"white","border-color":"black"});
         $(".card-body").css({"background":"darkgrey","color":"white"});
+    }
+    if (anime === "GINTAMA") {
+        $("#themesong").attr("src","assets/songs/Gintama.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/gintama.jpeg","alt":"Kagura, Gintoki, and Shinpachi"});
+        $(".card-title").text("Gintama");
+        $(".card-text").text("A show starring lazy samurai Gintoki and his friends as they attempt odd jobs to make ends meet. With amusing pop-culture references, unpredictable storylines, and fourth-wall breaks, this show remains endlessly entertaining.");
+        $(".card").css("border-color","black");
+        $("body").css("background","mintcream");
+        $("h1").css("color","black");
+        $("#game").css({"background":"lightgreen", "color":"black","border-color":"black"});
+        $(".card-body").css({"background":"lightblue","color":"black"});
     }
 }
 
