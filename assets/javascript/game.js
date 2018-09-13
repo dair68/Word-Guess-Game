@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 1;
+var index = 6;
 var anime = [
     "ATTACK ON TITAN",
     "SAILOR MOON",
@@ -122,7 +122,7 @@ function changeStyle(anime) {
     if (anime === "ATTACK ON TITAN") {
         $("#themesong").attr("src","assets/songs/AttackOnTitan.mp3");
         document.getElementById("themesong").play();
-        $(".card-img-top").attr({"src":"assets/images/attack.jpg","alt":"Attack on Titan"});
+        $(".card-img-top").attr({"src":"assets/images/attack.jpg","alt":"Eren vs Titan"});
         $(".card-title").text("Attack on Titan");
         $(".card-text").text("A tale of humans who must deal with the gigantic, man-eating titans residing just outside their high city walls.");
         $(".card").css("border-color","white");
@@ -134,7 +134,7 @@ function changeStyle(anime) {
     if (anime === "SAILOR MOON") {
         $("#themesong").attr("src","assets/songs/SailorMoon.mp3");
         document.getElementById("themesong").play();
-        $(".card-img-top").attr({"src":"assets/images/sailor.jpg","alt":"Sailor Moon"});
+        $(".card-img-top").attr({"src":"assets/images/sailor.jpg","alt":"Usagi Tsukino"});
         $(".card-title").text("Sailor Moon");
         $(".card-text").text("A show about magical school girl who fights baddies from outer space.");
         $(".card").css("border-color","white");
@@ -143,5 +143,33 @@ function changeStyle(anime) {
         $("#game").css({"background":"#ffbbdd", "color":"honeydew","border-color":"white"});
         $(".card-body").css({"background":"white","color":"black"});
     }
+    if (anime === "POKEMON") {
+        $("#themesong").attr("src","assets/songs/Pokemon.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/pokemon.jpg","alt":"Ash and friends"});
+        $(".card-title").text("Pokemon");
+        $(".card-text").text("The unforgettable monster-catching show about a boy who wants to become a Pokemon master, but can't turn 11.");
+        $(".card").css("border-color","black");
+        $("body").css("background","lightyellow");
+        $("h1").css("color","black");
+        $("#game").css({"background":"white", "color":"black","border-color":"black"});
+        $(".card-body").css({"background":"white","color":"black"});
+    }
+    //one piece 
+    //naruto
+    //dragon ball
+
+    // if (anime === "INUYASHA") {
+    //     $("#themesong").attr("src","assets/songs/Pokemon.mp3");
+    //     document.getElementById("themesong").play();
+    //     $(".card-img-top").attr({"src":"assets/images/pokemon.jpg","alt":"Ash and friends"});
+    //     $(".card-title").text("Pokemon");
+    //     $(".card-text").text("The unforgettable monster-catching show about a boy who wants to become a Pokemon master, but can't turn 11.");
+    //     $(".card").css("border-color","black");
+    //     $("body").css("background","lightyellow");
+    //     $("h1").css("color","black");
+    //     $("#game").css({"background":"white", "color":"black","border-color":"black"});
+    //     $(".card-body").css({"background":"white","color":"black"});
+    // }
 }
 
