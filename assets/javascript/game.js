@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 9;
+var index = 10;
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var anime = [
     "ATTACK ON TITAN",
@@ -235,10 +235,22 @@ function changeStyle(anime) {
         $(".card-title").text("One Punch Man");
         $(".card-text").text("A silly show that parodies the superhero genre by featuring a protagonist who can defeat anything with just one punch. Over-the-top, yet ultimately doomed villians combined with an entertaining dynamic between the protagonist and his cyborg sidekick make this one a winner.");
         $(".card").css("border-color","black");
-        $("body").css("background","honeydew");
+        $("body").css("background","khaki");
         $("h1").css("color","black");
-        $("#game").css({"background":"crimson", "color":"white","border-color":"black"});
+        $("#game").css({"background":"skyblue", "color":"black","border-color":"black"});
         $(".card-body").css({"background":"lightyellow","color":"black"});
+    }
+    if (anime === "DEATH NOTE") {
+        $("#themesong").attr("src","assets/songs/Death.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/death.jpg","alt":"Light Yagami and some creepy-looking figures"});
+        $(".card-title").text("Death Note");
+        $(".card-text").text("A psychological thriller surrounding a notebook with the power to kill anyone anywhere, and the owner's increasing madness. With the involvement of a cult and the authorities, the stakes are high.");
+        $(".card").css("border-color","black");
+        $("body").css("background","black");
+        $("h1").css("color","white");
+        $("#game").css({"background":"grey", "color":"white","border-color":"black"});
+        $(".card-body").css({"background":"darkgrey","color":"white"});
     }
 }
 
