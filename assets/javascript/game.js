@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 6;
+var index = 5;
 var anime = [
     "ATTACK ON TITAN",
     "SAILOR MOON",
@@ -157,8 +157,18 @@ function changeStyle(anime) {
     }
     //one piece 
     //naruto
-    //dragon ball
-
+    if (anime === "DRAGON BALL") {
+        $("#themesong").attr("src","assets/songs/Inuyasha.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/dragonball.jpg","alt":"Goku and friends"});
+        $(".card-title").text("Dragon Ball");
+        $(".card-text").text("An action packed series featuring Saiyans, intense fights, and wish granting balls.");
+        $(".card").css("border-color","black");
+        $("body").css("background","darkorange");
+        $("h1").css("color","black");
+        $("#game").css({"background":"white", "color":"black","border-color":"black"});
+        $(".card-body").css({"background":"white","color":"black"});
+    }
     if (anime === "INUYASHA") {
         $("#themesong").attr("src","assets/songs/Inuyasha.mp3");
         document.getElementById("themesong").play();
