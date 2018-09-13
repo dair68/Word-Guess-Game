@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 8;
+var index = 9;
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var anime = [
     "ATTACK ON TITAN",
@@ -227,6 +227,18 @@ function changeStyle(anime) {
         $("h1").css("color","white");
         $("#game").css({"background":"goldenrod", "color":"black","border-color":"white"});
         $(".card-body").css({"background":"chocolate","color":"black"});
+    }
+    if (anime === "ONE PUNCH MAN") {
+        $("#themesong").attr("src","assets/songs/OnePunchMan.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/punch.jpg","alt":"Saitama"});
+        $(".card-title").text("One Punch Man");
+        $(".card-text").text("A silly show that parodies the superhero genre by featuring a protagonist who can defeat anything with just one punch. Over-the-top, yet ultimately doomed villians combined with an entertaining dynamic between the protagonist and his cyborg sidekick make this one a winner.");
+        $(".card").css("border-color","black");
+        $("body").css("background","honeydew");
+        $("h1").css("color","black");
+        $("#game").css({"background":"crimson", "color":"white","border-color":"black"});
+        $(".card-body").css({"background":"lightyellow","color":"black"});
     }
 }
 
