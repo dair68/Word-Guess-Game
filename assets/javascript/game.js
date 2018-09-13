@@ -4,7 +4,8 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 7;
+var index = 8;
+var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var anime = [
     "ATTACK ON TITAN",
     "SAILOR MOON",
@@ -14,9 +15,8 @@ var anime = [
     "DRAGON BALL",
     "INUYASHA",
     "FULLMETAL ALCHEMIST",
-    "YOUR LIE IN APRIL",
+    "YU-GI-OH!",
     "ONE PUNCH MAN",
-    "YUGIOH",
     "DEATH NOTE",
     "GINTAMA",
     "ANGEL BEATS",
@@ -35,7 +35,8 @@ var anime = [
     "HETALIA",
     "MY HERO ACADEMIA",
     "FAIRY TAIL",
-    "SWORD ART ONLINE"
+    "SWORD ART ONLINE",
+    "YOUR LIE IN APRIL"
 ];
 
 
@@ -57,11 +58,11 @@ function reset() {
     // }
     word = anime[index];
     console.log(word);
-    currentWord = "-".repeat(word.length);
+    currentWord = "_".repeat(word.length);
     //replacing appropriate dashes with spaces
     for (var i=0; i<word.length; i++) {
-        if (word[i] === " ") {
-            currentWord = currentWord.substring(0,i) + " " + currentWord.substring(i+1);
+        if (!alphabet.includes(word[i])) {
+            currentWord = currentWord.substring(0,i) + word[i] + currentWord.substring(i+1);
         }
     }
     guesses = 12;
@@ -75,7 +76,7 @@ function reset() {
 $(document).on("keyup", function(event) {
     key = event.key.toUpperCase();
     //making sure key is letter, and not already guessed
-    if ("A" <= key && key <= "Z" && !guessedLetters.includes(key)) {
+    if (alphabet.includes(key) && !guessedLetters.includes(key)) {
         //guessed correct letter!
         if (word.includes(key)) {
             // console.log("match");
@@ -124,7 +125,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/attack.jpg","alt":"Eren vs Titan"});
         $(".card-title").text("Attack on Titan");
-        $(".card-text").text("A tale of humans who must deal with the gigantic, man-eating titans residing just outside their high city walls.");
+        $(".card-text").text("An intense tale of humans who must deal with the gigantic, man-eating titans residing just outside their high city walls.");
         $(".card").css("border-color","white");
         $("body").css("background","darkred");
         $("h1").css("color","white");
@@ -160,7 +161,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/piece.jpg","alt":"Monkey D. Luffy and the crew"});
         $(".card-title").text("One Piece");
-        $(".card-text").text("This insanely popular show chronicles the swashbuckling adventures of pirate Monkey D. Luffy and his friends in their search of the elusive 'One Piece' treasure. Did we mention that the protagonist has the powers of rubber?");
+        $(".card-text").text("This insanely popular show chronicles the swashbuckling adventures of pirate Monkey D. Luffy and his friends in their search for the elusive 'One Piece' treasure. Did I mention that the protagonist has the powers of rubber?");
         $(".card").css("border-color","black");
         $("body").css("background","aqua");
         $("h1").css("color","black");
@@ -184,7 +185,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/dragonball.jpg","alt":"Goku and friends"});
         $(".card-title").text("Dragon Ball");
-        $(".card-text").text("An action packed series featuring tailed-Saiyans, intense episode-spanning fights, and wish granting balls. On a scale of 1-10, this show is over 9000.");
+        $(".card-text").text("An action packed series featuring tailed-Saiyans, intense episode-spanning fights, and wish granting balls. On a scale of 1-10, this show is over 9000!");
         $(".card").css("border-color","black");
         $("body").css("background","#f48033");
         $("h1").css("color","black");
@@ -196,7 +197,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/inuyasha.jpg","alt":"Inuyasha and Kagome"});
         $(".card-title").text("Inuyasha");
-        $(".card-text").text("Schoolgirl Kagome and half-demon Inuyasha team up in search of the shards of a powerful ancient jewel across the demon-filled feudal Japan. This show was my childhood.");
+        $(".card-text").text("Schoolgirl Kagome and half-demon Inuyasha team up in search of the shards of a powerful ancient jewel across demon-filled feudal Japan. My personal favorite.");
         $(".card").css("border-color","black");
         $("body").css("background","purple");
         $("h1").css("color","white");
@@ -214,6 +215,18 @@ function changeStyle(anime) {
         $("h1").css("color","white");
         $("#game").css({"background":"white", "color":"black","border-color":"black"});
         $(".card-body").css({"background":"lightgrey","color":"black"});
+    }
+    if (anime === "YU-GI-OH!") {
+        $("#themesong").attr("src","assets/songs/Yugioh.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/yugioh.jpg","alt":"Yami Yugi holding a card"});
+        $(".card-title").text("Yu-Gi-Oh!");
+        $(".card-text").text("A show featuring a children's card game and a child containing the spirit of an ancient Pharaoh. The 4Kids dub has been amusingly parodied on Yu-Gi-Oh The Abridged Series, which can be found on Youtube.");
+        $(".card").css("border-color","black");
+        $("body").css("background","black");
+        $("h1").css("color","white");
+        $("#game").css({"background":"goldenrod", "color":"black","border-color":"white"});
+        $(".card-body").css({"background":"chocolate","color":"black"});
     }
 }
 
