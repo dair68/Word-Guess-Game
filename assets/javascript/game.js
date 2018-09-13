@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 3;
+var index = 4;
 var anime = [
     "ATTACK ON TITAN",
     "SAILOR MOON",
@@ -167,8 +167,18 @@ function changeStyle(anime) {
         $("#game").css({"background":"lightgreen", "color":"black","border-color":"black"});
         $(".card-body").css({"background":"lightyellow","color":"black"});
     }
-     
-    //naruto
+    if (anime === "NARUTO") {
+        $("#themesong").attr("src","assets/songs/Naruto.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/naruto.jpg","alt":"title ninja Naruto"});
+        $(".card-title").text("Naruto");
+        $(".card-text").text("One of the most popular animes ever, this long-running series tells the story the young titular ninja in his dream becoming the next Hokage.");
+        $(".card").css("border-color","black");
+        $("body").css("background","lightyellow");
+        $("h1").css("color","black");
+        $("#game").css({"background":"black", "color":"white","border-color":"black"});
+        $(".card-body").css({"background":"white","color":"black"});
+    }
     if (anime === "DRAGON BALL") {
         $("#themesong").attr("src","assets/songs/Dragonball.mp3");
         document.getElementById("themesong").play();
@@ -176,17 +186,17 @@ function changeStyle(anime) {
         $(".card-title").text("Dragon Ball");
         $(".card-text").text("An action packed series featuring Saiyans, intense fights, and wish granting balls.");
         $(".card").css("border-color","black");
-        $("body").css("background","darkorange");
+        $("body").css("background","#f48033");
         $("h1").css("color","black");
-        $("#game").css({"background":"white", "color":"black","border-color":"black"});
-        $(".card-body").css({"background":"white","color":"black"});
+        $("#game").css({"background":"darkblue", "color":"yellow","border-color":"black"});
+        $(".card-body").css({"background":"lightyellow","color":"black"});
     }
     if (anime === "INUYASHA") {
         $("#themesong").attr("src","assets/songs/Inuyasha.mp3");
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/inuyasha.jpg","alt":"Inuyasha and Kagome"});
         $(".card-title").text("Inuyasha");
-        $(".card-text").text("Schoolgirl and half-demon team up to find shards of an ancient jewel across feudal Japan.");
+        $(".card-text").text("Schoolgirl Kagome and half-demon Inuyasha team up in search of the shards of a powerful ancient jewel across the demon-filled feudal Japan.");
         $(".card").css("border-color","black");
         $("body").css("background","purple");
         $("h1").css("color","white");
