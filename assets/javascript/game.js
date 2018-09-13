@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 0;
+var index = 1;
 var anime = [
     "ATTACK ON TITAN",
     "SAILOR MOON",
@@ -136,12 +136,12 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/sailor.jpg","alt":"Sailor Moon"});
         $(".card-title").text("Sailor Moon");
-        $(".card-text").text("A show about magical school girl who fightss baddies from outer space.");
+        $(".card-text").text("A show about magical school girl who fights baddies from outer space.");
         $(".card").css("border-color","white");
-        $("body").css("background","darkred");
-        $("h1").css("color","white");
-        $("#game").css({"background":"#580201", "color":"white","border-color":"white"});
-        $(".card-body").css({"background":"black","color":"white"});
+        $("body").css("background","hotpink");
+        $("h1").css("color","honeydew");
+        $("#game").css({"background":"#ffbbdd", "color":"honeydew","border-color":"white"});
+        $(".card-body").css({"background":"white","color":"black"});
     }
 }
 
