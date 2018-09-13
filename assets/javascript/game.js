@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 4;
+var index = 7;
 var anime = [
     "ATTACK ON TITAN",
     "SAILOR MOON",
@@ -136,7 +136,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/sailor.jpg","alt":"Usagi Tsukino"});
         $(".card-title").text("Sailor Moon");
-        $(".card-text").text("A show about a magical school girl who fights baddies from outer space. She is the one named Sailor Moon!");
+        $(".card-text").text("A show about a magical school girl named Usagi Tsukino who fights baddies from outer space. One of many space warriors, she is the one named Sailor Moon!");
         $(".card").css("border-color","honeydew");
         $("body").css("background","hotpink");
         $("h1").css("color","honeydew");
@@ -160,7 +160,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/piece.jpg","alt":"Monkey D. Luffy and the crew"});
         $(".card-title").text("One Piece");
-        $(".card-text").text("This insanely popular show chronicles the swashbuckling adventures of pirate Monkey D. Luffy and his friends in their search of the elusive 'One Piece' treasure.");
+        $(".card-text").text("This insanely popular show chronicles the swashbuckling adventures of pirate Monkey D. Luffy and his friends in their search of the elusive 'One Piece' treasure. Did we mention that the protagonist has the powers of rubber?");
         $(".card").css("border-color","black");
         $("body").css("background","aqua");
         $("h1").css("color","black");
@@ -172,7 +172,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/naruto.jpg","alt":"title ninja Naruto"});
         $(".card-title").text("Naruto");
-        $(".card-text").text("One of the most popular animes ever, this long-running series tells the story the young titular ninja in his dream becoming the next Hokage.");
+        $(".card-text").text("One of the most popular animes ever, this over decade-long series tells the story the young titular ninja in his dream becoming the next Hokage. Try the Naruto run next time you're late for work!");
         $(".card").css("border-color","black");
         $("body").css("background","lightyellow");
         $("h1").css("color","black");
@@ -184,7 +184,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/dragonball.jpg","alt":"Goku and friends"});
         $(".card-title").text("Dragon Ball");
-        $(".card-text").text("An action packed series featuring Saiyans, intense fights, and wish granting balls.");
+        $(".card-text").text("An action packed series featuring tailed-Saiyans, intense episode-spanning fights, and wish granting balls. On a scale of 1-10, this show is over 9000.");
         $(".card").css("border-color","black");
         $("body").css("background","#f48033");
         $("h1").css("color","black");
@@ -196,12 +196,24 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/inuyasha.jpg","alt":"Inuyasha and Kagome"});
         $(".card-title").text("Inuyasha");
-        $(".card-text").text("Schoolgirl Kagome and half-demon Inuyasha team up in search of the shards of a powerful ancient jewel across the demon-filled feudal Japan.");
+        $(".card-text").text("Schoolgirl Kagome and half-demon Inuyasha team up in search of the shards of a powerful ancient jewel across the demon-filled feudal Japan. This show was my childhood.");
         $(".card").css("border-color","black");
         $("body").css("background","purple");
         $("h1").css("color","white");
         $("#game").css({"background":"white", "color":"black","border-color":"black"});
         $(".card-body").css({"background":"white","color":"black"});
+    }
+    if (anime === "FULLMETAL ALCHEMIST") {
+        $("#themesong").attr("src","assets/songs/FullMetalAlchemist.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/alchemist.jpg","alt":"Edward, Alphonse, and the rest of the characters looking badass."});
+        $(".card-title").text("Fullmetal Alchemist");
+        $(".card-text").text("A well-crafted story of two alchemy practicing brothers who search for the Philosopher's Stone in order to restore their bodies. There are actually two different animes: the original Fullmetal Alchemist and the more manga-faithful Fullmetal Alchemist: Brotherhood. Both are well worth watching.");
+        $(".card").css("border-color","black");
+        $("body").css("background","darkblue");
+        $("h1").css("color","white");
+        $("#game").css({"background":"white", "color":"black","border-color":"black"});
+        $(".card-body").css({"background":"lightgrey","color":"black"});
     }
 }
 
