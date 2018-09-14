@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 13;
+var index = 14;
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var anime = [
     "ATTACK ON TITAN",
@@ -281,12 +281,24 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/bleach.jpg","alt":"Ichigo Kurosaki and co"});
         $(".card-title").text("Bleach");
-        $(".card-text").text("A long running show centered on orange-haired Ichigo Kurosaki and his job as a Soul Reaper: destroy evil spirits and send good spirits to the afterlife. Filled to the brim with awesome moments, it's no wonder that the show's popularity is still going strong.");
+        $(".card-text").text("A long running show centered on orange-hairedp Ichigo Kurosaki and his job as a Soul Reaper: destroy evil spirits and send good spirits to the afterlife. Filled to the brim with awesome moments, it's no wonder that the show's popularity is still going strong.");
         $(".card").css("border-color","black");
         $("body").css("background","white");
         $("h1").css("color","black");
         $("#game").css({"background":"black", "color":"white","border-color":"black"});
         $(".card-body").css({"background":"grey","color":"white"});
+    }
+    if (anime === "MY HERO ACADEMIA") {
+        $("#themesong").attr("src","assets/songs/MyHero.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/hero.jpg","alt":"Izuku and friends"});
+        $(".card-title").text("My Hero Academia");
+        $(".card-text").text("An anime about underdog Izuku and his journey to becoming a certified hero under his mentor, the legendary All Might. Several characters and superpowers add up to form a show with many spectacular and poignant moments.");
+        $(".card").css("border-color","black");
+        $("body").css("background","gold");
+        $("h1").css("color","black");
+        $("#game").css({"background": "green", "color":"white","border-color":"black"});
+        $(".card-body").css({"background":"firebrick","color":"white"});
     }
 }
 
