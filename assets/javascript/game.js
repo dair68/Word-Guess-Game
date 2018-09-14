@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 11;
+var index = 13;
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var anime = [
     "ATTACK ON TITAN",
@@ -16,27 +16,27 @@ var anime = [
     "INUYASHA",
     "FULLMETAL ALCHEMIST",
     "YU-GI-OH!",
-    "ONE PUNCH MAN",
+    "ONE PUNCH MAN", 
     "DEATH NOTE",
     "GINTAMA",
-    "ANGEL BEATS",
+    "TOKYO GHOUL",
+    "BLEACH",
+    "MY HERO ACADEMIA",
     "KILL LA KILL",
     "YURI ON ICE",
-    "TOKYO GHOUL",
     "COWBOY BEBOP",
     "GUNDAM",
     "NEON GENESIS EVANGELION",
     "INAZUMA ELEVEN",
     "HUNTER X HUNTER",
     "BOBOBO-BO BO-BOBO",
-    "BLEACH",
     "JOJO'S BIZARRE ADVENTURE",
     "CASED CLOSED",
     "HETALIA",
-    "MY HERO ACADEMIA",
     "FAIRY TAIL",
     "SWORD ART ONLINE",
-    "YOUR LIE IN APRIL"
+    "YOUR LIE IN APRIL",
+    "ANGEL BEATS"
 ];
 
 
@@ -263,6 +263,30 @@ function changeStyle(anime) {
         $("h1").css("color","black");
         $("#game").css({"background":"lightgreen", "color":"black","border-color":"black"});
         $(".card-body").css({"background":"lightblue","color":"black"});
+    }
+    if (anime === "TOKYO GHOUL") {
+        $("#themesong").attr("src","assets/songs/ghoul.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/Ghoul.jpg","alt":"Ken Kaneki"});
+        $(".card-title").text("Tokyo Ghoul");
+        $(".card-text").text("A show starring a young man who must live with the horrifying fate of being turned part ghoul. Featuring action, horror, and tragedy, this series isn't for the faint of heart.");
+        $(".card").css("border-color","white");
+        $("body").css("background","black");
+        $("h1").css("color","white");
+        $("#game").css({"background":"red", "color":"white","border-color":"white"});
+        $(".card-body").css({"background":"grey","color":"white"});
+    }
+    if (anime === "BLEACH") {
+        $("#themesong").attr("src","assets/songs/Bleach.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/bleach.jpg","alt":"Ichigo Kurosaki and co"});
+        $(".card-title").text("Bleach");
+        $(".card-text").text("A long running show centered on orange-haired Ichigo Kurosaki and his job as a Soul Reaper: destroy evil spirits and send good spirits to the afterlife. Filled to the brim with awesome moments, it's no wonder that the show's popularity is still going strong.");
+        $(".card").css("border-color","black");
+        $("body").css("background","white");
+        $("h1").css("color","black");
+        $("#game").css({"background":"black", "color":"white","border-color":"black"});
+        $(".card-body").css({"background":"grey","color":"white"});
     }
 }
 
