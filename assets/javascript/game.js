@@ -25,13 +25,14 @@ var anime = [
     "KILL LA KILL",
     "YURI ON ICE",
     "COWBOY BEBOP",
+    "JOJO'S BIZARRE ADVENTURE",
+    "CASED CLOSED",
     "GUNDAM",
     "NEON GENESIS EVANGELION",
     "INAZUMA ELEVEN",
     "HUNTER X HUNTER",
     "BOBOBO-BO BO-BOBO",
-    "JOJO'S BIZARRE ADVENTURE",
-    "CASED CLOSED",
+    
     "HETALIA",
     "FAIRY TAIL",
     "SWORD ART ONLINE",
@@ -112,11 +113,6 @@ $(document).on("keyup", function(event) {
         }
     }
 });
-
-//when loading page for first time
-reset();
-update();
-
 
 function changeStyle(anime) {
     console.log("switch!");
@@ -300,5 +296,21 @@ function changeStyle(anime) {
         $("#game").css({"background": "green", "color":"white","border-color":"black"});
         $(".card-body").css({"background":"firebrick","color":"white"});
     }
+    if (anime === "KILL LA KILL") {
+        $("#themesong").attr("src","assets/songs/Kill.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/kill.jpg","alt":"Ryuko Matoi"});
+        $(".card-title").text("Kill la Kill");
+        $(".card-text").text("A wild anime featuring schoolgirl Ryuko Matoi and her sentient, power-granting uniform. She's trying to find out the truth behind the murder of her father while at war with the student council president. Fun stuff.");
+        $(".card").css("border-color","black");
+        $("body").css("background","white");
+        $("h1").css("color","black");
+        $("#game").css({"background": "firebrick", "color":"white","border-color":"black"});
+        $(".card-body").css({"background":"navy","color":"white"});
+    }
 }
 
+
+//when loading page for first time
+reset();
+update();
