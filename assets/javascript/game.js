@@ -4,7 +4,7 @@ var word = "";
 var currentWord = "";
 var guesses = 12;
 var guessedLetters = [];
-var index = 14;
+// var index = 10;
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var anime = [
     "ATTACK ON TITAN",
@@ -26,18 +26,18 @@ var anime = [
     "YURI ON ICE",
     "COWBOY BEBOP",
     "JOJO'S BIZARRE ADVENTURE",
-    "CASED CLOSED",
-    "GUNDAM",
-    "NEON GENESIS EVANGELION",
-    "INAZUMA ELEVEN",
-    "HUNTER X HUNTER",
-    "BOBOBO-BO BO-BOBO",
+    "CASE CLOSED",
+    // "GUNDAM",
+    // "NEON GENESIS EVANGELION",
+    // "INAZUMA ELEVEN",
+    // "HUNTER X HUNTER",
+    // "BOBOBO-BO BO-BOBO",
     
-    "HETALIA",
-    "FAIRY TAIL",
-    "SWORD ART ONLINE",
-    "YOUR LIE IN APRIL",
-    "ANGEL BEATS"
+    // "HETALIA",
+    // "FAIRY TAIL",
+    // "SWORD ART ONLINE",
+    // "YOUR LIE IN APRIL",
+    // "ANGEL BEATS"
 ];
 
 
@@ -53,12 +53,12 @@ function update() {
 //sets up page for another game of hangman
 function reset() {
     //randomly selecting anime as the hangman word. ensures new word differs from previous.
-    // previousWord = word;
-    // while (word === previousWord) {
-    //     word = anime[Math.floor(Math.random()*anime.length)];
-    // }
-    word = anime[index];
-    console.log(word);
+    previousWord = word;
+    while (word === previousWord) {
+        word = anime[Math.floor(Math.random()*anime.length)];
+    }
+    // word = anime[index];
+    // console.log(word);
     currentWord = "_".repeat(word.length);
     //replacing appropriate dashes with spaces
     for (var i=0; i<word.length; i++) {
@@ -90,7 +90,7 @@ $(document).on("keyup", function(event) {
             if (word === currentWord) {
                 wins++;
                 changeStyle(word);
-                index++;
+                // index++;
                 reset();
                 
             }
@@ -106,7 +106,7 @@ $(document).on("keyup", function(event) {
             guessedLetters.push(key);
             //out of guesses
             if (guesses === 0) {
-                index++;
+                // index++;
                 reset(); 
             }
             update();
@@ -114,6 +114,7 @@ $(document).on("keyup", function(event) {
     }
 });
 
+//changes the colorscheme and plays theme for the anime!
 function changeStyle(anime) {
     console.log("switch!");
     if (anime === "ATTACK ON TITAN") {
@@ -169,7 +170,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/naruto.jpg","alt":"title ninja Naruto"});
         $(".card-title").text("Naruto");
-        $(".card-text").text("One of the most popular animes ever, this over decade-long series tells the story the young titular ninja in his dream becoming the next Hokage. Try the Naruto run next time you're late for work!");
+        $(".card-text").text("One of the most popular animes ever, this decade-traversing series tells the story of the young titular ninja in his dream of becoming the next Hokage. Try the Naruto run next time you're late for work!");
         $(".card").css("border-color","black");
         $("body").css("background","lightyellow");
         $("h1").css("color","black");
@@ -181,7 +182,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/dragonball.jpg","alt":"Goku and friends"});
         $(".card-title").text("Dragon Ball");
-        $(".card-text").text("An action packed series featuring tailed-Saiyans, intense episode-spanning fights, and wish granting balls. On a scale of 1-10, this show is over 9000!");
+        $(".card-text").text("An action packed series featuring tailed Saiyans, intense episode-spanning fights, and wish granting balls. On a scale of 1-10, this show is over 9000!");
         $(".card").css("border-color","black");
         $("body").css("background","#f48033");
         $("h1").css("color","black");
@@ -205,7 +206,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/alchemist.jpg","alt":"Edward, Alphonse, and the rest of the characters looking badass."});
         $(".card-title").text("Fullmetal Alchemist");
-        $(".card-text").text("A well-crafted story of two alchemy practicing brothers who search for the Philosopher's Stone in order to restore their bodies. There are actually two different animes: the original Fullmetal Alchemist and the more manga-faithful Fullmetal Alchemist: Brotherhood. Both are well worth watching.");
+        $(".card-text").text("A well-crafted story of two alchemy-practicing brothers who search for the Philosopher's Stone in order to restore their bodies. There are actually two different series: the original Fullmetal Alchemist and the more manga-faithful Fullmetal Alchemist: Brotherhood. Both are well worth watching.");
         $(".card").css("border-color","black");
         $("body").css("background","darkblue");
         $("h1").css("color","white");
@@ -217,7 +218,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/yugioh.jpg","alt":"Yami Yugi holding a card"});
         $(".card-title").text("Yu-Gi-Oh!");
-        $(".card-text").text("A show featuring a children's card game and a child containing the spirit of an ancient Pharaoh. The 4Kids dub has been amusingly parodied on Yu-Gi-Oh The Abridged Series, which can be found on Youtube.");
+        $(".card-text").text("A show featuring a children's card game and a child containing the spirit of an ancient pharaoh. The 4Kids dub has been amusingly parodied on Yu-Gi-Oh!: The Abridged Series, which can be found on YouTube.");
         $(".card").css("border-color","black");
         $("body").css("background","black");
         $("h1").css("color","white");
@@ -241,7 +242,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/death.jpg","alt":"Light Yagami and some creepy-looking figures"});
         $(".card-title").text("Death Note");
-        $(".card-text").text("A psychological thriller surrounding a notebook with the power to kill anyone anywhere, and the owner's increasing madness. With the involvement of a cult and the authorities, the stakes are high.");
+        $(".card-text").text("A psychological thriller surrounding a notebook with the power to kill anyone anywhere, and its owner's increasing madness. With the involvement of a cult and the authorities, the stakes are high.");
         $(".card").css("border-color","black");
         $("body").css("background","black");
         $("h1").css("color","white");
@@ -277,7 +278,7 @@ function changeStyle(anime) {
         document.getElementById("themesong").play();
         $(".card-img-top").attr({"src":"assets/images/bleach.jpg","alt":"Ichigo Kurosaki and co"});
         $(".card-title").text("Bleach");
-        $(".card-text").text("A long running show centered on orange-hairedp Ichigo Kurosaki and his job as a Soul Reaper: destroy evil spirits and send good spirits to the afterlife. Filled to the brim with awesome moments, it's no wonder that the show's popularity is still going strong.");
+        $(".card-text").text("A long running show centered on orange-haired Ichigo Kurosaki and his job as a Soul Reaper: destroy evil spirits and send good spirits to the afterlife. Filled to the brim with awesome moments, it's no wonder that the show's popularity is still going strong.");
         $(".card").css("border-color","black");
         $("body").css("background","white");
         $("h1").css("color","black");
@@ -308,9 +309,57 @@ function changeStyle(anime) {
         $("#game").css({"background": "firebrick", "color":"white","border-color":"black"});
         $(".card-body").css({"background":"navy","color":"white"});
     }
+    if (anime === "YURI ON ICE") {
+        $("#themesong").attr("src","assets/songs/Ice.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/ice.jpeg","alt":"Ice Skaters"});
+        $(".card-title").text("Yuri on Ice");
+        $(".card-text").text("An anime centering on the relationship between ice skater Yuri Katsuki and his mentor Victor Nikiforov.");
+        $(".card").css("border-color","black");
+        $("body").css("background","aqua");
+        $("h1").css("color","black");
+        $("#game").css({"background": "crimson", "color":"white","border-color":"black"});
+        $(".card-body").css({"background":"navy","color":"white"});
+    }
+    if (anime === "COWBOY BEBOP") {
+        $("#themesong").attr("src","assets/songs/Bebop.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/cowboy.jpg","alt":"Jet, Spike, Faye, Ed, and Ein"});
+        $(".card-title").text("Cowboy Bebop");
+        $(".card-text").text("Hailed as a 'work which becomes [a] new genre itself', this unique space western follows the lives of the five bounty hunters pictured above (including the dog). With a jazzy soundtrack and rich character backstory, this is one for the ages.");
+        $(".card").css("border-color","white");
+        $("body").css("background","chocolate");
+        $("h1").css("color","white");
+        $("#game").css({"background": "burlywood", "color":"black","border-color":"white"});
+        $(".card-body").css({"background":"black","color":"white"});
+    }
+    if (anime === "JOJO'S BIZARRE ADVENTURE") {
+        $("#themesong").attr("src","assets/songs/Jojo.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/jojo.jpg","alt":"several characters from the series"});
+        $(".card-title").text("Jojo's Bizarre Adventure");
+        $(".card-text").text("Starring not one character, but an entire family, this intricate series follows the lives of the Joestars and their fight with the supernatural. With episodes focusing on different family members across the ages, and a western-inspired artstyle, this is a series like no other.");
+        $(".card").css("border-color","white");
+        $("body").css("background","purple");
+        $("h1").css("color","white");
+        $("#game").css({"background": "mediumspringgreen", "color":"black","border-color":"white"});
+        $(".card-body").css({"background":"black","color":"white"});
+    }
+    if (anime === "CASE CLOSED") {
+        $("#themesong").attr("src","assets/songs/CaseClosed.mp3");
+        document.getElementById("themesong").play();
+        $(".card-img-top").attr({"src":"assets/images/detective.jpg","alt":"dective Conan, young and old"});
+        $(".card-title").text("Case Closed");
+        $(".card-text").text("Also known as Detective Conan, the series follows the story of detective Shinichi Kudo. Highschooler turned kid, the detective must find the whereabouts of the men who turned him young while solving murder mysteries along the way.");
+        $(".card").css("border-color","white");
+        $("body").css("background","black");
+        $("h1").css("color","white");
+        $("#game").css({"background": "khaki", "color":"black","border-color":"white"});
+        $(".card-body").css({"background":"#580201","color":"white"});
+    }
 }
-
 
 //when loading page for first time
 reset();
 update();
+

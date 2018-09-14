@@ -16,9 +16,7 @@ header {
 h1 {
     font-family: mangaTemple;
     text-align: center;
-    /* font: bold; */
     font-size: 3em;
-   color: 
 }
 
 #game {
@@ -26,10 +24,5 @@ h1 {
     border: thin solid black;
     font-size: 1.75em;
     padding: .5em;
-    /* float: right;
-    padding: 2%; */
 }
 
-#card {
-    color: wh
-}
